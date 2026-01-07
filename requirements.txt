@@ -1,3 +1,11 @@
+# Speech Recognition dependencies
 SpeechRecognition>=3.10.0
 PyAudio>=0.2.13
 pydub>=0.25.1
+
+# Telegram Bot dependencies
+python-telegram-bot>=20.0
+python-dotenv>=1.0.0
+
+# Optional: for better audio processing
+ffmpeg-python>=0.2.0
