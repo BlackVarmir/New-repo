@@ -9,6 +9,7 @@ Telegram Bot для распознавания речи (Speech to Text)
 import os
 import sys
 import logging
+import tempfile
 from pathlib import Path
 import speech_recognition as sr
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -43,9 +44,9 @@ LANGUAGES = {
     'ko': {'name': '🇰🇷 한국어', 'code': 'ko-KR'},
 }
 
-# Директория для временных файлов
-TEMP_DIR = Path('/tmp/telegram_speech2text')
-TEMP_DIR.mkdir(exist_ok=True)
+# Директория для временных файлов (кросс-платформенная)
+TEMP_DIR = Path(tempfile.gettempdir()) / 'telegram_speech2text'
+TEMP_DIR.mkdir(parents=True, exist_ok=True)
 
 
 class SpeechRecognitionBot:
