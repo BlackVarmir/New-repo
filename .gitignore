@@ -144,3 +144,7 @@ temp.*
 *.swp
 *.swo
 *~
+
+
+#Ignore vscode AI rules
+.github\instructions\codacy.instructions.md
