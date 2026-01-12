@@ -12,6 +12,7 @@ import logging
 import tempfile
 from pathlib import Path
 import speech_recognition as sr
+from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application,
@@ -414,6 +415,9 @@ class SpeechRecognitionBot:
 
 def main():
     """Главная функция"""
+    # Загружаем переменные окружения из .env файла
+    load_dotenv()
+
     # Получаем токен из переменной окружения
     token = os.getenv('TELEGRAM_BOT_TOKEN')
 
